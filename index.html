@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Status / Locappoint / The Brick Dev Studios</title>
+    <meta name="description" content="Live status for the Locappoint build. Phase progress, current focus, what we need from you.">
+    <meta name="robots" content="noindex">
+
+    <meta property="og:title" content="Locappoint / Project Status">
+    <meta property="og:description" content="Where the build is, what is next, what we need.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://status.locappoint.com/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="status.css">
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+</head>
+
+<body>
+
+    <!-- SVG defs reused across the page -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <!-- Locappoint mark: pin + slot + amber dot, with addressable inner pieces for phase-state tinting -->
+            <symbol id="loca-mark" viewBox="0 0 100 100">
+                <g transform="translate(14.3 4.9) scale(0.85)">
+                    <path class="mark-pin" d="M 42 6 C 22 6, 6 22, 6 42 C 6 53, 10 62, 16 70 L 42 100 L 68 70 C 74 62, 78 53, 78 42 C 78 22, 62 6, 42 6 Z" fill="#2D7FF0"/>
+                    <rect class="mark-slot" x="16" y="22" width="52" height="36" rx="4" fill="#0B1530"/>
+                    <rect class="mark-bar" x="22" y="30" width="22" height="4" rx="1" fill="#5BA0FF"/>
+                    <rect class="mark-bar" x="22" y="40" width="32" height="4" rx="1" fill="#5BA0FF" opacity="0.32"/>
+                    <rect class="mark-bar" x="22" y="50" width="18" height="3" rx="1" fill="#5BA0FF" opacity="0.2"/>
+                    <circle class="mark-dot" cx="62" cy="29" r="3.5" fill="#E89A3E"/>
+                </g>
+            </symbol>
+        </defs>
+    </svg>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+
+    <!-- Top bar -->
+    <header class="topbar" id="topbar" role="banner">
+        <div class="topbar__inner">
+            <a class="topbar__brand" href="https://thebrickdev.com" target="_blank" rel="noopener" aria-label="The Brick Dev Studios">
+                The Brick Dev Studios
+            </a>
+            <div class="topbar__project">
+                Project /
+                <a class="topbar__project-link" href="https://locappoint.com" target="_blank" rel="noopener">
+                    <svg class="topbar__brand-mark" viewBox="0 0 100 100" aria-hidden="true" style="width:18px;height:18px;display:inline-block;vertical-align:middle"><use href="#loca-mark"/></svg>
+                    Locappoint
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="status" id="top">
+
+        <!-- Hero -->
+        <section class="hero reveal" aria-labelledby="hero-title">
+            <div class="hero__radial" aria-hidden="true"></div>
+            <div class="hero__inner">
+                <div class="hero__eyebrow">
+                    <span class="pulse-dot"></span>
+                    <span>Live status / Locappoint</span>
+                </div>
+                <h1 id="hero-title" class="hero__title">
+                    Phase 1 <span class="signal">rebuilding</span>. Phase 2 already coded. <span class="azure">Launch on track.</span>
+                </h1>
+                <p class="hero__lede">
+                    The waitlist page that went live earlier did not match where the brand needed to land. We have rebuilt the brand foundation from scratch, redrawn the logo, locked the palette, and started the page rebuild against it. Phase 2 (the actual booking platform) was already partly coded under the hood, ready to inherit the new brand once Phase 1 closes.
+                </p>
+
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <div class="hero__stat-label">Phase</div>
+                        <div class="hero__stat-value">1 <span style="color:var(--text-subtle); font-size:18px;">of 4</span></div>
+                        <div class="hero__stat-sub">Rebuilding waitlist</div>
+                    </div>
+                    <div class="hero__stat">
+                        <div class="hero__stat-label">Launch ready</div>
+                        <div class="hero__stat-value"><span class="azure">32%</span></div>
+                        <div class="hero__stat-sub">Brand + foundation locked</div>
+                    </div>
+                    <div class="hero__stat">
+                        <div class="hero__stat-label">Now building</div>
+                        <div class="hero__stat-value" style="font-size:15px; font-weight:500; padding-top:6px;">Waitlist rebuild</div>
+                        <div class="hero__stat-sub">Against locked brand</div>
+                    </div>
+                    <div class="hero__stat">
+                        <div class="hero__stat-label">Updated</div>
+                        <div class="hero__stat-value" style="font-size:15px; font-weight:500; padding-top:6px;">
+                            <time class="js-relative" datetime="2026-06-23T09:00:00Z">23 June 2026</time>
+                        </div>
+                        <div class="hero__stat-sub">This page auto-refreshes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Phase journey -->
+        <section class="section reveal" id="phases" aria-labelledby="phases-title">
+            <div class="section__head">
+                <span class="section__eyebrow">01 / Where we are</span>
+                <h2 class="section__title" id="phases-title">Four phases. One destination.</h2>
+                <p class="section__lede">Phases are locked. We work top to bottom. Each pin below shows where that phase stands.</p>
+            </div>
+
+            <div class="journey">
+                <a class="phase" href="#phase-1">
+                    <div class="phase__pin phase__pin--filled">
+                        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#loca-mark"/></svg>
+                    </div>
+                    <div class="phase__body">
+                        <div class="phase__row">
+                            <span class="phase__num">Phase 1</span>
+                            <span class="phase__name">Waitlist</span>
+                        </div>
+                        <div class="phase__sub">Brand foundation locked. Page rebuild in progress against the new brand. Pitch video in production.</div>
+                    </div>
+                    <span class="phase__status phase__status--active">Rebuilding</span>
+                </a>
+
+                <a class="phase" href="#phase-2">
+                    <div class="phase__pin phase__pin--half">
+                        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#loca-mark"/></svg>
+                    </div>
+                    <div class="phase__body">
+                        <div class="phase__row">
+                            <span class="phase__num">Phase 2</span>
+                            <span class="phase__name">MVP booking</span>
+                        </div>
+                        <div class="phase__sub">Most of the platform under the hood is already coded. Auth, portals, booking calendar foundation. Waiting on Phase 1 close to bring the new brand into it.</div>
+                    </div>
+                    <span class="phase__status phase__status--building">Foundation laid</span>
+                </a>
+
+                <a class="phase" href="#phase-3">
+                    <div class="phase__pin phase__pin--outline">
+                        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#loca-mark"/></svg>
+                    </div>
+                    <div class="phase__body">
+                        <div class="phase__row">
+                            <span class="phase__num">Phase 3</span>
+                            <span class="phase__name">What sets us apart</span>
+                        </div>
+                        <div class="phase__sub">Nine candidate features researched and scoped. We pick two or three after the first cohort tells us where the real pain is.</div>
+                    </div>
+                    <span class="phase__status phase__status--scoped">Scoped</span>
+                </a>
+
+                <a class="phase" href="#phase-4">
+                    <div class="phase__pin phase__pin--outline">
+                        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#loca-mark"/></svg>
+                    </div>
+                    <div class="phase__body">
+                        <div class="phase__row">
+                            <span class="phase__num">Phase 4</span>
+                            <span class="phase__name">AI features</span>
+                        </div>
+                        <div class="phase__sub">Smart no-show prediction. WhatsApp booking that actually talks. Multilingual profiles. On the waitlist as a roadmap, built once Phase 3 has businesses paying and staying.</div>
+                    </div>
+                    <span class="phase__status phase__status--planned">Planned</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Phase 1 detail -->
+        <section class="section reveal" id="phase-1" aria-labelledby="phase-1-title">
+            <div class="section__head">
+                <span class="section__eyebrow">02 / Phase 1 detail</span>
+                <h2 class="section__title" id="phase-1-title">Waitlist, rebuilt right</h2>
+                <p class="section__lede">First version went live to start capturing interest. With the brand foundation now locked, we're rebuilding it to match the product shipping underneath.</p>
+            </div>
+
+            <article class="detail">
+                <div class="detail__head">
+                    <span class="detail__num">Phase 1</span>
+                    <span class="detail__title">Waitlist</span>
+                </div>
+                <div class="detail__grid">
+                    <div class="detail__col">
+                        <div class="detail__col-label">Done</div>
+                        <div class="detail__list">
+                            <div class="detail__item detail__item--done">Brand foundation: palette, typography, surface rules locked</div>
+                            <div class="detail__item detail__item--done">Logo redrawn: pin + appointment slot + confirmation dot</div>
+                            <div class="detail__item detail__item--done">Waitlist admin dashboard with conversion analytics</div>
+                            <div class="detail__item detail__item--done">Market research informing the rebuild (no-show data, competitor analysis)</div>
+                        </div>
+                    </div>
+                    <div class="detail__col detail__col--active">
+                        <div class="detail__col-label">In progress</div>
+                        <div class="detail__list">
+                            <div class="detail__item detail__item--active">Page rebuild against new brand, section by section</div>
+                            <div class="detail__item detail__item--active">Pitch video storyboard (Plan A: no founder cameo, Plan B: with Vincent if recorded)</div>
+                            <div class="detail__item detail__item--active">CSS migration from old purple palette to locked tokens</div>
+                        </div>
+                    </div>
+                    <div class="detail__col detail__col--next">
+                        <div class="detail__col-label">Next</div>
+                        <div class="detail__list">
+                            <div class="detail__item detail__item--next">Two-sided waitlist modal (business vs client capture)</div>
+                            <div class="detail__item detail__item--next">Real product walkthrough section with screenshots</div>
+                            <div class="detail__item detail__item--next">Founder note section (needs your copy)</div>
+                            <div class="detail__item detail__item--next">Pitch video render and embed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail__target">
+                    <span class="detail__target-label">Target</span>
+                    <span class="detail__target-value">Page launches in two to three weeks. Stays live through Phase 2, becomes the entry point for beta access once the booking platform is ready.</span>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- Phase 2 detail -->
+        <section class="section reveal" id="phase-2" aria-labelledby="phase-2-title">
+            <div class="section__head">
+                <span class="section__eyebrow">03 / Phase 2 detail</span>
+                <h2 class="section__title" id="phase-2-title">The booking platform itself</h2>
+                <p class="section__lede">The actual product. Businesses sign in, set hours, share a link, get bookings. The foundation underneath is wired: routing, database, auth, layouts, calendar bones. The screens businesses actually use day to day, and the end-to-end booking experience, are still ahead. This is where most of the build work sits.</p>
+            </div>
+
+            <article class="detail">
+                <div class="detail__head">
+                    <span class="detail__num">Phase 2</span>
+                    <span class="detail__title">MVP booking platform</span>
+                </div>
+                <div class="detail__grid">
+                    <div class="detail__col">
+                        <div class="detail__col-label">Foundation in place</div>
+                        <div class="detail__list">
+                            <div class="detail__item detail__item--done">Routing structure for the whole app</div>
+                            <div class="detail__item detail__item--done">Database structure (nine tables, production-ready)</div>
+                            <div class="detail__item detail__item--done">Authentication scaffolding (email and Google sign-in)</div>
+                            <div class="detail__item detail__item--done">Business portal layout</div>
+                            <div class="detail__item detail__item--done">Client area layout</div>
+                            <div class="detail__item detail__item--done">Booking calendar bones</div>
+                        </div>
+                    </div>
+                    <div class="detail__col">
+                        <div class="detail__col-label">Paused for</div>
+                        <div class="detail__list">
+                            <div class="detail__item">Phase 1 close. Then this kicks back into active build.</div>
+                        </div>
+                    </div>
+                    <div class="detail__col detail__col--next">
+                        <div class="detail__col-label">Still to build</div>
+                        <div class="detail__list">
+                            <div class="detail__item detail__item--next">End-to-end booking flow that real customers can complete</div>
+                            <div class="detail__item detail__item--next">Brand-aligned portal and client screens</div>
+                            <div class="detail__item detail__item--next">Public business pages (locappoint.com/your-name)</div>
+                            <div class="detail__item detail__item--next">WhatsApp and email notifications wired</div>
+                            <div class="detail__item detail__item--next">Business onboarding flow (profile, services, availability)</div>
+                            <div class="detail__item detail__item--next">PWA install on iPhone and Android (no app store needed)</div>
+                            <div class="detail__item detail__item--next">Analytics for the booking platform itself</div>
+                            <div class="detail__item detail__item--next">Waitlist transitions to "Join Beta" entry point</div>
+                            <div class="detail__item detail__item--next">First five businesses onboarded and live</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail__target">
+                    <span class="detail__target-label">Honest answer</span>
+                    <span class="detail__target-value">Eight to ten weeks of focused build after Phase 1 closes. The foundation saves us time on plumbing, not on product surface. We will scope tighter if launch window pressures it.</span>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- Phase 3 detail -->
+        <section class="section reveal" id="phase-3" aria-labelledby="phase-3-title">
+            <div class="section__head">
+                <span class="section__eyebrow">04 / Phase 3 detail</span>
+                <h2 class="section__title" id="phase-3-title">What makes us irreplaceable</h2>
+                <p class="section__lede">Booking is commodity now. What keeps customers paying is what nobody else does well for our market. Nine candidates researched. Two or three get built after Phase 2 tells us which pain is loudest.</p>
+            </div>
+
+            <article class="detail">
+                <div class="detail__head">
+                    <span class="detail__num">Phase 3</span>
+                    <span class="detail__title">Standout features</span>
+                </div>
+                <div class="detail__grid">
+                    <div class="detail__col">
+                        <div class="detail__col-label">Candidates</div>
+                        <div class="detail__list">
+                            <div class="detail__item">Booking via WhatsApp without leaving the app</div>
+                            <div class="detail__item">Walk-in queue on top of appointments (barbershops)</div>
+                            <div class="detail__item">Multi-location for franchises (one owner, many shops)</div>
+                            <div class="detail__item">No-show reduction system with measurable revenue lift</div>
+                            <div class="detail__item">Cash tracking for cash-first businesses in Lagos</div>
+                            <div class="detail__item">Service combo slots (haircut + beard as one booking)</div>
+                            <div class="detail__item">Group bookings for fitness classes</div>
+                            <div class="detail__item">Business public pages as mini-sites (replaces Wix)</div>
+                            <div class="detail__item">Real Portuguese / English / local language support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail__target">
+                    <span class="detail__target-label">Target</span>
+                    <span class="detail__target-value">After five paying businesses from Phase 2</span>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- Phase 4 detail -->
+        <section class="section reveal" id="phase-4" aria-labelledby="phase-4-title">
+            <div class="section__head">
+                <span class="section__eyebrow">05 / Phase 4 detail</span>
+                <h2 class="section__title" id="phase-4-title">AI features that earn the label</h2>
+                <p class="section__lede">The market expects AI in 2026. We show what is coming on the waitlist now, so visitors know what they are joining for. We build it when the product has real users and real data behind it.</p>
+            </div>
+
+            <article class="detail">
+                <div class="detail__head">
+                    <span class="detail__num">Phase 4</span>
+                    <span class="detail__title">AI layer</span>
+                </div>
+                <div class="detail__grid">
+                    <div class="detail__col">
+                        <div class="detail__col-label">On the roadmap</div>
+                        <div class="detail__list">
+                            <div class="detail__item">Smart no-show prediction with extra confirmations for risky slots</div>
+                            <div class="detail__item">Conversational booking on WhatsApp (actually intelligent)</div>
+                            <div class="detail__item">AI-written business profiles in Portuguese and English</div>
+                            <div class="detail__item">Local search you can talk to in natural language</div>
+                            <div class="detail__item">Scheduling assistant for businesses based on their own patterns</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail__target">
+                    <span class="detail__target-label">Target</span>
+                    <span class="detail__target-value">Once Phase 3 has paying businesses staying and renewing</span>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- Cities -->
+        <section class="section reveal" id="cities" aria-labelledby="cities-title">
+            <div class="section__head">
+                <span class="section__eyebrow">06 / Geography</span>
+                <h2 class="section__title" id="cities-title">Three cities for Phase 1</h2>
+                <p class="section__lede">Lisbon and Porto first. Lagos follows once Portugal validates. Every section of the waitlist names all three because the brand is geographic, not generic.</p>
+            </div>
+
+            <div class="cities">
+                <div class="city">
+                    <div class="city__head">
+                        <div class="city__name">Lisbon</div>
+                        <svg class="city__flag" viewBox="0 0 30 20" aria-label="Portugal" role="img">
+                            <rect width="12" height="20" fill="#046A38"/>
+                            <rect x="12" width="18" height="20" fill="#DA291C"/>
+                            <circle cx="12" cy="10" r="3" fill="#FEDD00"/>
+                            <circle cx="12" cy="10" r="1.4" fill="#DA291C"/>
+                        </svg>
+                    </div>
+                    <div class="city__status">Primary launch market. Geography wired into the waitlist, country detection live, partnership form ready for local businesses.</div>
+                </div>
+                <div class="city">
+                    <div class="city__head">
+                        <div class="city__name">Porto</div>
+                        <svg class="city__flag" viewBox="0 0 30 20" aria-label="Portugal" role="img">
+                            <rect width="12" height="20" fill="#046A38"/>
+                            <rect x="12" width="18" height="20" fill="#DA291C"/>
+                            <circle cx="12" cy="10" r="3" fill="#FEDD00"/>
+                            <circle cx="12" cy="10" r="1.4" fill="#DA291C"/>
+                        </svg>
+                    </div>
+                    <div class="city__status">Secondary launch market. Same surface as Lisbon. Northern Portugal coverage gives the early cohort range.</div>
+                </div>
+                <div class="city">
+                    <div class="city__head">
+                        <div class="city__name">Lagos</div>
+                        <svg class="city__flag" viewBox="0 0 30 20" aria-label="Nigeria" role="img">
+                            <rect width="10" height="20" fill="#008751"/>
+                            <rect x="10" width="10" height="20" fill="#FFFFFF"/>
+                            <rect x="20" width="10" height="20" fill="#008751"/>
+                        </svg>
+                    </div>
+                    <div class="city__status">Phase 1 capture only. Active Phase 2 push to Lagos once Portugal cohort proves the model. Country detection already picks Nigeria.</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- What we need from you -->
+        <section class="section reveal" id="need" aria-labelledby="need-title">
+            <div class="section__head">
+                <span class="section__eyebrow">07 / Your input</span>
+                <h2 class="section__title" id="need-title">What we need from you</h2>
+                <p class="section__lede">Three things to unblock the path to launch. Quick decisions and one copy block.</p>
+            </div>
+
+            <div class="needs">
+                <div class="need">
+                    <div class="need__head">
+                        <div class="need__title">Founder note copy</div>
+                        <div class="need__when">Needed before Phase 1 close</div>
+                    </div>
+                    <p class="need__text">About 80 words in your voice for the waitlist page. Why Locappoint, why Lisbon and Lagos, why now. We have a placeholder live, we want yours.</p>
+                </div>
+                <div class="need">
+                    <div class="need__head">
+                        <div class="need__title">Pitch video appearance</div>
+                        <div class="need__when">Optional, decide this week</div>
+                    </div>
+                    <p class="need__text">A six to ten second cut-in showing you on camera, founder voice. If yes, we send a recording brief. If not, the video ships fine without it. Plan A and Plan B are both built.</p>
+                </div>
+                <div class="need">
+                    <div class="need__head">
+                        <div class="need__title">Pricing direction confirmation</div>
+                        <div class="need__when">Before waitlist relaunch</div>
+                    </div>
+                    <p class="need__text">Our recommendation: free forever for the first 100 businesses in Lisbon, Porto, and Lagos. Acquisition mechanic that investors can read on the page. Yes, no, or other direction.</p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div>
+                <div class="footer__col-label">Studio</div>
+                <div class="footer__strong">The Brick Dev Studios</div>
+                <div class="footer__sub">Building Locappoint with FlowleXx Group.</div>
+            </div>
+            <div>
+                <div class="footer__col-label">Project</div>
+                <div class="footer__strong">Locappoint</div>
+                <div class="footer__sub">A FlowleXx Group initiative.</div>
+            </div>
+            <div>
+                <div class="footer__col-label">Meta</div>
+                <div class="footer__meta">
+                    Status page v1.0<br>
+                    Last published <time class="js-relative" datetime="2026-06-23T09:00:00Z">23 June 2026</time><br>
+                    status.locappoint.com
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+    <script src="status.js" defer></script>
+</body>
+
+</html>
